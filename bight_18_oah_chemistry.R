@@ -86,14 +86,14 @@ model_stats <- models |>
   ) |>
   select(parameter, formula, n = nobs, adj.r.squared, rmse)
 
-readr::write_csv(model_stats, file = "tables/alin_models_fitness_2025-11-11.csv")
+readr::write_csv(model_stats, file = "tables/alin_models_fitness_2025-12-11.csv")
 
 model_coefs <- models |>
   mutate(coefficients = purrr::map(model, broom::tidy)) |>
   unnest(coefficients) |>
   select(-model)
 
-readr::write_csv(model_coefs, file = "tables/alin_models_coefficients_2025-11-11.csv")
+readr::write_csv(model_coefs, file = "tables/alin_models_coefficients_2025-12-11.csv")
 
 
 # estimate ctd profiles ####
@@ -163,7 +163,7 @@ bight_alin_models_CTD_profiles <- all_ctd_predictions |>
 
 bight_alin_models_CTD_profiles |>
   mutate(across(where(is.numeric), ~ round(.x, 8))) |>
-  readr::write_csv(file = "tables/predicted_CTD_profiles_2025-11-11.csv", na = "")
+  readr::write_csv(file = "tables/predicted_CTD_profiles_2025-12-11.csv", na = "")
 
 # average predicted parameter values 15-100 m depth
 bight_alin_models_CTD_profiles |>

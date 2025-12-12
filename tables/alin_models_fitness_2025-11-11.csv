@@ -1,5 +1,0 @@
-parameter,formula,n,adj.r.squared,rmse
-Omega,bottle_Omega ~ Temperature * Oxygen,218,0.966224252546577,0.14524941101258246
-pH,bottle_pH_insitu ~ Temperature * Oxygen,218,0.9310058045500926,0.04329518478566173
-DIC,bottle_DIC ~ Density * Oxygen,218,0.9674762055070182,16.256265567587338
-TA,bottle_TA ~ Temperature * Salinity,220,0.7787034359454965,5.21267447048275

@@ -3,7 +3,7 @@ library(units)
 
 # ingesting and cleaning raw bottle and CTD data
 
-bight_18_bottle <- readxl::read_xlsx("data-raw/Bongo_Bottle_20250618.xlsx") |>
+bight_18_bottle <- readxl::read_xlsx("data-raw/Bongo_Bottle_20251211.xlsx") |>
   mutate(
     across(where(is.numeric), function(x) if_else(x == -88 | x == -99, NA_real_, x)),
     Date = lubridate::as_date(Date),
@@ -70,7 +70,7 @@ bight_18_ctd <- readxl::read_xlsx("data-raw/B18_CTD_20250129.xlsx") |>
 
 # use additional core stations for correction algorithm
 all_stations_ctd <- readxl::read_xlsx(
-  "data-raw/AllCoreStations_CTD_20250305.xlsx",
+  "data-raw/AllCoreStations_CTD_20251211.xlsx",
   col_types = c(
     "text", "date", "text", "text", "numeric", "numeric", "numeric",
     "numeric", "numeric", "numeric", "numeric", "text"
