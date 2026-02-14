@@ -1,0 +1,1 @@
+This folder contains all the predicted carb chem data separated by agency. Second (+) reps have been removed, as weel as any data missing the necessary temp, oxygen, or salinity data required to calculate carb chem parameters.
