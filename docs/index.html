@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+<meta name="date" content="2026-07-31" />
+
+<title>Bight18 Ocean Acidification Figure Review</title>
+
+<script src="index_files/header-attrs-2.31/header-attrs.js"></script>
+<script src="index_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="index_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="index_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="index_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="index_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="index_files/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="index_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="index_files/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="index_files/navigation-1.1/tabsets.js"></script>
+<link href="index_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="index_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Bight18 Ocean Acidification Figure
+Review</h1>
+<h4 class="date">July 31, 2026</h4>
+
+</div>
+
+
+<div id="review-instructions" class="section level1">
+<h1>Review instructions</h1>
+<p>Figures are grouped into folders. In some folders several similar
+figures exist to provide various angles of analysis and options for the
+report. Please feel free to merge your comments if the apply to an
+entire group of figures.</p>
+<p>You may refer to the displayed figure ID when providing comments.</p>
+<h1>
+1 Model Evaluation
+</h1>
+<h2>
+1-1 Model Characterization
+</h2>
+<p class="section-intro">
+A series of figures evaluating how well the modeled pH reproduces bottle
+observations from the model training dataset.
+</p>
+<div class="figure-grid">
+<div class="figure-card">
+<h3 class="figure-title">
+1.1.1 — CarbModel CalibrationTable
+</h3>
+<p><a href="figures/1 Model Evaluation/1-1 Model Characterization/CarbModel_CalibrationTable.png" target="_blank">
+<img src="figures/1 Model Evaluation/1-1 Model Characterization/CarbModel_CalibrationTable.png" alt="1.1.1 — CarbModel CalibrationTable" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+1.1.2 — Predicted-Bottle Bland-Altman
+</h3>
+<p><a href="figures/1 Model Evaluation/1-1 Model Characterization/Predicted-Bottle_Bland-Altman.png" target="_blank">
+<img src="figures/1 Model Evaluation/1-1 Model Characterization/Predicted-Bottle_Bland-Altman.png" alt="1.1.2 — Predicted-Bottle Bland-Altman" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+1.1.3 — Predicted-Bottle DensityofDifferences
+</h3>
+<p><a href="figures/1 Model Evaluation/1-1 Model Characterization/Predicted-Bottle_DensityofDifferences.png" target="_blank">
+<img src="figures/1 Model Evaluation/1-1 Model Characterization/Predicted-Bottle_DensityofDifferences.png" alt="1.1.3 — Predicted-Bottle DensityofDifferences" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+1.1.4 — Predicted vs Bottle DepthProfiles AllCarb
+</h3>
+<p><a href="figures/1 Model Evaluation/1-1 Model Characterization/Predicted_vs_Bottle_DepthProfiles_AllCarb.png" target="_blank">
+<img src="figures/1 Model Evaluation/1-1 Model Characterization/Predicted_vs_Bottle_DepthProfiles_AllCarb.png" alt="1.1.4 — Predicted vs Bottle DepthProfiles AllCarb" class="review-image">
+</a></p>
+</div>
+</div>
+<h2>
+1-2 CTD vs Predicted
+</h2>
+<p class="section-intro">
+Figures demonstrating how CTD measured pH compares to modeled
+(predicted) pH and how each compare to bottle samples.
+</p>
+<div class="figure-grid">
+<div class="figure-card">
+<h3 class="figure-title">
+1.2.1 — CTD vs Predicted pH
+</h3>
+<p><a href="figures/1 Model Evaluation/1-2 CTD vs Predicted/CTD_vs_Predicted_pH.png" target="_blank">
+<img src="figures/1 Model Evaluation/1-2 CTD vs Predicted/CTD_vs_Predicted_pH.png" alt="1.2.1 — CTD vs Predicted pH" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+1.2.2 — CTD vs Predicted pH Btl agreement
+</h3>
+<p><a href="figures/1 Model Evaluation/1-2 CTD vs Predicted/CTD_vs_Predicted_pH_Btl_agreement.png" target="_blank">
+<img src="figures/1 Model Evaluation/1-2 CTD vs Predicted/CTD_vs_Predicted_pH_Btl_agreement.png" alt="1.2.2 — CTD vs Predicted pH Btl agreement" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+1.2.3 — CTD vs Predicted pH residuals
+</h3>
+<p><a href="figures/1 Model Evaluation/1-2 CTD vs Predicted/CTD_vs_Predicted_pH_residuals.png" target="_blank">
+<img src="figures/1 Model Evaluation/1-2 CTD vs Predicted/CTD_vs_Predicted_pH_residuals.png" alt="1.2.3 — CTD vs Predicted pH residuals" class="review-image">
+</a></p>
+</div>
+</div>
+<h1>
+2 General Analyses
+</h1>
+<h2>
+2-1 TS Plots
+</h2>
+<p class="section-intro">
+General density-contour plots. In the plot labeled “water column
+properties” it is likely not all parameters need to be shown- as all are
+a linear function of T and S- but they are provided for your review. The
+plot labeled “mixed params” may contain some useful context about water
+body differences and similarities across various categories.
+</p>
+<div class="figure-grid">
+<div class="figure-card">
+<h3 class="figure-title">
+2.1.1 — DensityContour MixedParams AllDepths SalTrunc32-35
+</h3>
+<p><a href="figures/2 General Analyses/2-1 TS Plots/DensityContour_MixedParams_AllDepths_SalTrunc32-35.png" target="_blank">
+<img src="figures/2 General Analyses/2-1 TS Plots/DensityContour_MixedParams_AllDepths_SalTrunc32-35.png" alt="2.1.1 — DensityContour MixedParams AllDepths SalTrunc32-35" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.1.2 — WaterColumnProperties TSplots-resized
+</h3>
+<p><a href="figures/2 General Analyses/2-1 TS Plots/WaterColumnProperties_TSplots-resized.png" target="_blank">
+<img src="figures/2 General Analyses/2-1 TS Plots/WaterColumnProperties_TSplots-resized.png" alt="2.1.2 — WaterColumnProperties TSplots-resized" class="review-image">
+</a></p>
+</div>
+</div>
+<h2>
+2-2 Boxplots
+</h2>
+<p class="section-intro">
+Basic comparisons of distributions of select parameters among agencies;
+distance categories; and seasons. The same series of parameters of
+interest is repeated multiple times; but subset by different categories
+each time. N is provided below each group for context; as not all
+groupings retain a comparable or meaningful amount of data (e.g. there
+are only two nearshore stations with Omega crossing 1). Not all
+parameters of interest need to be included in the report; but all
+available are provided for your review. 100m omega; 100m oxygen; depth
+of biologically relevant oxygen thresholds; and additional carbonate
+parameters can be added. Please state which- if any- of these you would
+like to see in your feedback.
+</p>
+<div class="figure-grid">
+<div class="figure-card">
+<h3 class="figure-title">
+2.2.1 — Agency/omega 1pt0 lat box
+</h3>
+<p><a href="figures/2 General Analyses/2-2 Boxplots/Agency/omega_1pt0_lat_box.png" target="_blank">
+<img src="figures/2 General Analyses/2-2 Boxplots/Agency/omega_1pt0_lat_box.png" alt="2.2.1 — Agency/omega 1pt0 lat box" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.2.2 — Agency/omega 1pt4 lat box
+</h3>
+<p><a href="figures/2 General Analyses/2-2 Boxplots/Agency/omega_1pt4_lat_box.png" target="_blank">
+<img src="figures/2 General Analyses/2-2 Boxplots/Agency/omega_1pt4_lat_box.png" alt="2.2.2 — Agency/omega 1pt4 lat box" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.2.3 — Agency/omega 1pt7 lat box
+</h3>
+<p><a href="figures/2 General Analyses/2-2 Boxplots/Agency/omega_1pt7_lat_box.png" target="_blank">
+<img src="figures/2 General Analyses/2-2 Boxplots/Agency/omega_1pt7_lat_box.png" alt="2.2.3 — Agency/omega 1pt7 lat box" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.2.4 — Agency/omega 50m lat box
+</h3>
+<p><a href="figures/2 General Analyses/2-2 Boxplots/Agency/omega_50m_lat_box.png" target="_blank">
+<img src="figures/2 General Analyses/2-2 Boxplots/Agency/omega_50m_lat_box.png" alt="2.2.4 — Agency/omega 50m lat box" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.2.5 — Agency/oxygen 50m lat box
+</h3>
+<p><a href="figures/2 General Analyses/2-2 Boxplots/Agency/oxygen_50m_lat_box.png" target="_blank">
+<img src="figures/2 General Analyses/2-2 Boxplots/Agency/oxygen_50m_lat_box.png" alt="2.2.5 — Agency/oxygen 50m lat box" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.2.6 — Cross-Shore/omega 1pt0 xshore box
+</h3>
+<p><a href="figures/2 General Analyses/2-2 Boxplots/Cross-Shore/omega_1pt0_xshore_box.png" target="_blank">
+<img src="figures/2 General Analyses/2-2 Boxplots/Cross-Shore/omega_1pt0_xshore_box.png" alt="2.2.6 — Cross-Shore/omega 1pt0 xshore box" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.2.7 — Cross-Shore/omega 1pt4 xshore box
+</h3>
+<p><a href="figures/2 General Analyses/2-2 Boxplots/Cross-Shore/omega_1pt4_xshore_box.png" target="_blank">
+<img src="figures/2 General Analyses/2-2 Boxplots/Cross-Shore/omega_1pt4_xshore_box.png" alt="2.2.7 — Cross-Shore/omega 1pt4 xshore box" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.2.8 — Cross-Shore/omega 1pt7 xshore box
+</h3>
+<p><a href="figures/2 General Analyses/2-2 Boxplots/Cross-Shore/omega_1pt7_xshore_box.png" target="_blank">
+<img src="figures/2 General Analyses/2-2 Boxplots/Cross-Shore/omega_1pt7_xshore_box.png" alt="2.2.8 — Cross-Shore/omega 1pt7 xshore box" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.2.9 — Cross-Shore/omega 50m xshore box
+</h3>
+<p><a href="figures/2 General Analyses/2-2 Boxplots/Cross-Shore/omega_50m_xshore_box.png" target="_blank">
+<img src="figures/2 General Analyses/2-2 Boxplots/Cross-Shore/omega_50m_xshore_box.png" alt="2.2.9 — Cross-Shore/omega 50m xshore box" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.2.10 — Cross-Shore/oxygen 50m xshore box
+</h3>
+<p><a href="figures/2 General Analyses/2-2 Boxplots/Cross-Shore/oxygen_50m_xshore_box.png" target="_blank">
+<img src="figures/2 General Analyses/2-2 Boxplots/Cross-Shore/oxygen_50m_xshore_box.png" alt="2.2.10 — Cross-Shore/oxygen 50m xshore box" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.2.11 — Season/omega 1pt0 seas box
+</h3>
+<p><a href="figures/2 General Analyses/2-2 Boxplots/Season/omega_1pt0_seas_box.png" target="_blank">
+<img src="figures/2 General Analyses/2-2 Boxplots/Season/omega_1pt0_seas_box.png" alt="2.2.11 — Season/omega 1pt0 seas box" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.2.12 — Season/omega 1pt4 seas box
+</h3>
+<p><a href="figures/2 General Analyses/2-2 Boxplots/Season/omega_1pt4_seas_box.png" target="_blank">
+<img src="figures/2 General Analyses/2-2 Boxplots/Season/omega_1pt4_seas_box.png" alt="2.2.12 — Season/omega 1pt4 seas box" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.2.13 — Season/omega 1pt7 seas box
+</h3>
+<p><a href="figures/2 General Analyses/2-2 Boxplots/Season/omega_1pt7_seas_box.png" target="_blank">
+<img src="figures/2 General Analyses/2-2 Boxplots/Season/omega_1pt7_seas_box.png" alt="2.2.13 — Season/omega 1pt7 seas box" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.2.14 — Season/omega 50m seas box
+</h3>
+<p><a href="figures/2 General Analyses/2-2 Boxplots/Season/omega_50m_seas_box.png" target="_blank">
+<img src="figures/2 General Analyses/2-2 Boxplots/Season/omega_50m_seas_box.png" alt="2.2.14 — Season/omega 50m seas box" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.2.15 — Season/oxgygen 50m seas box
+</h3>
+<p><a href="figures/2 General Analyses/2-2 Boxplots/Season/oxgygen_50m_seas_box.png" target="_blank">
+<img src="figures/2 General Analyses/2-2 Boxplots/Season/oxgygen_50m_seas_box.png" alt="2.2.15 — Season/oxgygen 50m seas box" class="review-image">
+</a></p>
+</div>
+</div>
+<h2>
+2-3 Bivariates
+</h2>
+<div class="figure-grid">
+<div class="figure-card">
+<h3 class="figure-title">
+2.3.1 — oxygen omega 50m byAgency
+</h3>
+<p><a href="figures/2 General Analyses/2-3 Bivariates/oxygen_omega_50m_byAgency.png" target="_blank">
+<img src="figures/2 General Analyses/2-3 Bivariates/oxygen_omega_50m_byAgency.png" alt="2.3.1 — oxygen omega 50m byAgency" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.3.2 — oxygen omega 50m colorBySeason
+</h3>
+<p><a href="figures/2 General Analyses/2-3 Bivariates/oxygen_omega_50m_colorBySeason.png" target="_blank">
+<img src="figures/2 General Analyses/2-3 Bivariates/oxygen_omega_50m_colorBySeason.png" alt="2.3.2 — oxygen omega 50m colorBySeason" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.3.3 — oxygen omega allData
+</h3>
+<p><a href="figures/2 General Analyses/2-3 Bivariates/oxygen_omega_allData.png" target="_blank">
+<img src="figures/2 General Analyses/2-3 Bivariates/oxygen_omega_allData.png" alt="2.3.3 — oxygen omega allData" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.3.4 — oxygen omega allData byAgency
+</h3>
+<p><a href="figures/2 General Analyses/2-3 Bivariates/oxygen_omega_allData_byAgency.png" target="_blank">
+<img src="figures/2 General Analyses/2-3 Bivariates/oxygen_omega_allData_byAgency.png" alt="2.3.4 — oxygen omega allData byAgency" class="review-image">
+</a></p>
+</div>
+</div>
+<h2>
+2-4 Heatmaps
+</h2>
+<p class="section-intro">
+Heatmaps showing distribution of mean values of parameters of interest
+arranged spatially to approximate position on a map. N is provided below
+each group for context; as not all groupings retain a comparable or
+meaningful amount of data (e.g. there are only two nearshore stations
+with Omega crossing 1). Bins with no value are left blank. Not all
+parameters of interest need to be included in the report; but all
+available are provided for your review. 100m omega; 100m oxygen; depth
+of biologically relevant oxygen thresholds; and additional carbonate
+parameters can be added. Please state which- if any- of these you would
+like to see in your feedback.
+</p>
+<div class="figure-grid">
+<div class="figure-card">
+<h3 class="figure-title">
+2.4.1 — depth omega 1pt0 heatmap
+</h3>
+<p><a href="figures/2 General Analyses/2-4 Heatmaps/depth_omega_1pt0_heatmap.png" target="_blank">
+<img src="figures/2 General Analyses/2-4 Heatmaps/depth_omega_1pt0_heatmap.png" alt="2.4.1 — depth omega 1pt0 heatmap" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.4.2 — depth omega 1pt4 heatmap
+</h3>
+<p><a href="figures/2 General Analyses/2-4 Heatmaps/depth_omega_1pt4_heatmap.png" target="_blank">
+<img src="figures/2 General Analyses/2-4 Heatmaps/depth_omega_1pt4_heatmap.png" alt="2.4.2 — depth omega 1pt4 heatmap" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.4.3 — depth omega 1pt7 heatmap
+</h3>
+<p><a href="figures/2 General Analyses/2-4 Heatmaps/depth_omega_1pt7_heatmap.png" target="_blank">
+<img src="figures/2 General Analyses/2-4 Heatmaps/depth_omega_1pt7_heatmap.png" alt="2.4.3 — depth omega 1pt7 heatmap" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.4.4 — omega 50m heatmap
+</h3>
+<p><a href="figures/2 General Analyses/2-4 Heatmaps/omega_50m_heatmap.png" target="_blank">
+<img src="figures/2 General Analyses/2-4 Heatmaps/omega_50m_heatmap.png" alt="2.4.4 — omega 50m heatmap" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.4.5 — oxygen 50m heatmap
+</h3>
+<p><a href="figures/2 General Analyses/2-4 Heatmaps/oxygen_50m_heatmap.png" target="_blank">
+<img src="figures/2 General Analyses/2-4 Heatmaps/oxygen_50m_heatmap.png" alt="2.4.5 — oxygen 50m heatmap" class="review-image">
+</a></p>
+</div>
+</div>
+<h2>
+2-5 Hovmollers
+</h2>
+<p class="section-intro">
+These Hovmöller diagrams summarize latitude–time patterns in
+oceanographic conditions across the Southern California Bight.
+Interpolated surfaces were generated from individual CTD observations
+using a thin-plate spline and are intended to illustrate regional-scale
+patterns rather than conditions at unsampled locations. Faceting is used
+where appropriate to reduce interpolation across distinct monitoring
+regions. Hovmöllers are provided as the entire dataset in a single
+figure for select parameters. A band of extended distance between OCSAN
+and San Diego plots that was bordered on either side only by OA
+Monitoring stations was causing anomalous interpolation in this region.
+Therefore I decided to facet the hovmollers into separate cross-shore
+categories. Where faceted by distance category; categories are currently
+out of order. I suggest removing the nearshore category entirely for
+lack of meaningful data; but have left it in for now for your review.
+Where faceted by monitoring category (regular water quality vs OA
+monitoring stations) the NOAA ONI is plotted across the top. ONI can be
+added to any figure.
+</p>
+<div class="figure-grid">
+<div class="figure-card">
+<h3 class="figure-title">
+2.5.1 — AllStations/50m Omega
+</h3>
+<p><a href="figures/2 General Analyses/2-5 Hovmollers/AllStations/50m_Omega.png" target="_blank">
+<img src="figures/2 General Analyses/2-5 Hovmollers/AllStations/50m_Omega.png" alt="2.5.1 — AllStations/50m Omega" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.5.2 — AllStations/DepthtoOmega1pt4
+</h3>
+<p><a href="figures/2 General Analyses/2-5 Hovmollers/AllStations/DepthtoOmega1pt4.png" target="_blank">
+<img src="figures/2 General Analyses/2-5 Hovmollers/AllStations/DepthtoOmega1pt4.png" alt="2.5.2 — AllStations/DepthtoOmega1pt4" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.5.3 — AllStations/DepthtoOmega1pt7
+</h3>
+<p><a href="figures/2 General Analyses/2-5 Hovmollers/AllStations/DepthtoOmega1pt7.png" target="_blank">
+<img src="figures/2 General Analyses/2-5 Hovmollers/AllStations/DepthtoOmega1pt7.png" alt="2.5.3 — AllStations/DepthtoOmega1pt7" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.5.4 — by Distance Cat/omega 10 depth hov-facetbyDistCat
+</h3>
+<p><a href="figures/2 General Analyses/2-5 Hovmollers/by Distance Cat/omega_10_depth_hov-facetbyDistCat.png" target="_blank">
+<img src="figures/2 General Analyses/2-5 Hovmollers/by Distance Cat/omega_10_depth_hov-facetbyDistCat.png" alt="2.5.4 — by Distance Cat/omega 10 depth hov-facetbyDistCat" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.5.5 — by Distance Cat/omega 14 depth hov-facetbyDistCat
+</h3>
+<p><a href="figures/2 General Analyses/2-5 Hovmollers/by Distance Cat/omega_14_depth_hov-facetbyDistCat.png" target="_blank">
+<img src="figures/2 General Analyses/2-5 Hovmollers/by Distance Cat/omega_14_depth_hov-facetbyDistCat.png" alt="2.5.5 — by Distance Cat/omega 14 depth hov-facetbyDistCat" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.5.6 — by Distance Cat/omega 17 depth hov-facetbyDistCat
+</h3>
+<p><a href="figures/2 General Analyses/2-5 Hovmollers/by Distance Cat/omega_17_depth_hov-facetbyDistCat.png" target="_blank">
+<img src="figures/2 General Analyses/2-5 Hovmollers/by Distance Cat/omega_17_depth_hov-facetbyDistCat.png" alt="2.5.6 — by Distance Cat/omega 17 depth hov-facetbyDistCat" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.5.7 — by Distance Cat/omega 50m hov-facetbyDistCat
+</h3>
+<p><a href="figures/2 General Analyses/2-5 Hovmollers/by Distance Cat/omega_50m_hov-facetbyDistCat.png" target="_blank">
+<img src="figures/2 General Analyses/2-5 Hovmollers/by Distance Cat/omega_50m_hov-facetbyDistCat.png" alt="2.5.7 — by Distance Cat/omega 50m hov-facetbyDistCat" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.5.8 — by Distance Cat/oxygen 50m hov-facetbyDistCat
+</h3>
+<p><a href="figures/2 General Analyses/2-5 Hovmollers/by Distance Cat/oxygen_50m_hov-facetbyDistCat.png" target="_blank">
+<img src="figures/2 General Analyses/2-5 Hovmollers/by Distance Cat/oxygen_50m_hov-facetbyDistCat.png" alt="2.5.8 — by Distance Cat/oxygen 50m hov-facetbyDistCat" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.5.9 — by Monitoring wONI/omega 10 depth hov-facetbyMonitoring
+</h3>
+<p><a href="figures/2 General Analyses/2-5 Hovmollers/by Monitoring_wONI/omega_10_depth_hov-facetbyMonitoring.png" target="_blank">
+<img src="figures/2 General Analyses/2-5 Hovmollers/by Monitoring_wONI/omega_10_depth_hov-facetbyMonitoring.png" alt="2.5.9 — by Monitoring wONI/omega 10 depth hov-facetbyMonitoring" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.5.10 — by Monitoring wONI/omega 14 depth hov-facetbyMonitoring
+</h3>
+<p><a href="figures/2 General Analyses/2-5 Hovmollers/by Monitoring_wONI/omega_14_depth_hov-facetbyMonitoring.png" target="_blank">
+<img src="figures/2 General Analyses/2-5 Hovmollers/by Monitoring_wONI/omega_14_depth_hov-facetbyMonitoring.png" alt="2.5.10 — by Monitoring wONI/omega 14 depth hov-facetbyMonitoring" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.5.11 — by Monitoring wONI/omega 17 depth hov-facetbyMonitoring
+</h3>
+<p><a href="figures/2 General Analyses/2-5 Hovmollers/by Monitoring_wONI/omega_17_depth_hov-facetbyMonitoring.png" target="_blank">
+<img src="figures/2 General Analyses/2-5 Hovmollers/by Monitoring_wONI/omega_17_depth_hov-facetbyMonitoring.png" alt="2.5.11 — by Monitoring wONI/omega 17 depth hov-facetbyMonitoring" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.5.12 — by Monitoring wONI/omega 50m hov-facetbyMonitoring
+</h3>
+<p><a href="figures/2 General Analyses/2-5 Hovmollers/by Monitoring_wONI/omega_50m_hov-facetbyMonitoring.png" target="_blank">
+<img src="figures/2 General Analyses/2-5 Hovmollers/by Monitoring_wONI/omega_50m_hov-facetbyMonitoring.png" alt="2.5.12 — by Monitoring wONI/omega 50m hov-facetbyMonitoring" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.5.13 — by Monitoring wONI/oxygen 50m hov-facetbyMonitoring
+</h3>
+<p><a href="figures/2 General Analyses/2-5 Hovmollers/by Monitoring_wONI/oxygen_50m_hov-facetbyMonitoring.png" target="_blank">
+<img src="figures/2 General Analyses/2-5 Hovmollers/by Monitoring_wONI/oxygen_50m_hov-facetbyMonitoring.png" alt="2.5.13 — by Monitoring wONI/oxygen 50m hov-facetbyMonitoring" class="review-image">
+</a></p>
+</div>
+</div>
+<h2>
+2-6 Other Plots and Tables
+</h2>
+<p class="section-intro">
+This is a catch-all bin for general plots and tables that do not repeat
+across multiple parameters or have multiple options for review. Figures
+and tables included herein include tables that likely belong at the
+beginning of a carbonate chemistry result section showing regional
+statistics in predicted OA parameters; as well as figures specific to an
+analysis of ONI vs 50m-omega anomalies showing that- when seasonal
+trends are removed- ONI explains a meaningful portion of the variability
+in 50m omega.
+</p>
+<div class="figure-grid">
+<div class="figure-card">
+<h3 class="figure-title">
+2.6.1 — AgencySummaryTable
+</h3>
+<p><a href="figures/2 General Analyses/2-6 Other Plots and Tables/AgencySummaryTable.png" target="_blank">
+<img src="figures/2 General Analyses/2-6 Other Plots and Tables/AgencySummaryTable.png" alt="2.6.1 — AgencySummaryTable" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.6.2 — CastCountsByAgencyYearSeason
+</h3>
+<p><a href="figures/2 General Analyses/2-6 Other Plots and Tables/CastCountsByAgencyYearSeason.png" target="_blank">
+<img src="figures/2 General Analyses/2-6 Other Plots and Tables/CastCountsByAgencyYearSeason.png" alt="2.6.2 — CastCountsByAgencyYearSeason" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.6.3 — oni omega plot extra
+</h3>
+<p><a href="figures/2 General Analyses/2-6 Other Plots and Tables/oni_omega_plot_extra.png" target="_blank">
+<img src="figures/2 General Analyses/2-6 Other Plots and Tables/oni_omega_plot_extra.png" alt="2.6.3 — oni omega plot extra" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.6.4 — ONI omegaanomaly model coefs.png
+</h3>
+<p><a href="figures/2 General Analyses/2-6 Other Plots and Tables/ONI_omegaanomaly_model_coefs.png.png" target="_blank">
+<img src="figures/2 General Analyses/2-6 Other Plots and Tables/ONI_omegaanomaly_model_coefs.png.png" alt="2.6.4 — ONI omegaanomaly model coefs.png" class="review-image">
+</a></p>
+</div>
+<div class="figure-card">
+<h3 class="figure-title">
+2.6.5 — RegionalSummaryTable
+</h3>
+<p><a href="figures/2 General Analyses/2-6 Other Plots and Tables/RegionalSummaryTable.png" target="_blank">
+<img src="figures/2 General Analyses/2-6 Other Plots and Tables/RegionalSummaryTable.png" alt="2.6.5 — RegionalSummaryTable" class="review-image">
+</a></p>
+</div>
+</div>
+</div>
+<div id="submit-comments" class="section level1">
+<h1>Submit comments</h1>
+<p>A link to the figure comment form will be added here.</p>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
